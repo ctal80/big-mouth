@@ -20,7 +20,7 @@ const cognitoClientId = process.env.cognito_client_id
 const restaurantsApiRoot = process.env.restaurants_api;
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-var proxy = process.env.http_proxy || 'http://proxy-chain.intel.com:911';
+//var proxy = process.env.http_proxy || 'http://proxy-chain.intel.com:911';
 var html;
 
 function* loadHtml() {
@@ -53,7 +53,7 @@ console.log()
 
   let httpReq = http
    .get(restaurantsApiRoot)
-   .proxy(proxy)
+  // .proxy(proxy)
    .set('Host', opts.headers['Host'])
    .set('X-Amz-Date', opts.headers['X-Amz-Date'])
    .set('Authorization', opts.headers['Authorization']) 

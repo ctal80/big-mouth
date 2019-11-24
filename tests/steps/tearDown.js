@@ -6,9 +6,9 @@ AWS.config.region = 'eu-west-1';
 console.log("Region: ", AWS.config.region);
 
 var proxy = require('proxy-agent');
-AWS.config.update({
+/* AWS.config.update({
   httpOptions: { agent: proxy('http://proxy-chain.intel.com:911') }
-});
+}); */
 
 const cognito = new AWS.CognitoIdentityServiceProvider();
 
