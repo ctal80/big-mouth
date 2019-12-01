@@ -6,7 +6,7 @@ const fs = Promise.promisifyAll(require("fs"));
 const Mustache = require('mustache');
 const req = require('superagent');
 // extend with Request#proxy()
-require('superagent-proxy')(req);
+//require('superagent-proxy')(req);
 const http = require('superagent-promise')(req, Promise);
 const aws4 = require('aws4');
 const URL = require('url');
