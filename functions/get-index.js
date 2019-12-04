@@ -37,7 +37,6 @@ function* getRestaurants() {
     path: url.pathname
   };
   
-console.log()
 
   if(!process.env.AWS_ACCESS_KEY_ID) {
     let cred = (yield awscred.loadAsync()).credentials;
@@ -53,7 +52,6 @@ console.log()
 
   let httpReq = http
    .get(restaurantsApiRoot)
-  // .proxy(proxy)
    .set('Host', opts.headers['Host'])
    .set('X-Amz-Date', opts.headers['X-Amz-Date'])
    .set('Authorization', opts.headers['Authorization']) 
@@ -68,6 +66,7 @@ console.log()
 
 module.exports.handler = co.wrap (function* (event, context, callback) {
   let template = yield loadHtml();
+  console.log(template);
   let restaurants = yield  getRestaurants();
   let dayOfWeek = days[new Date().getDay()];
   
