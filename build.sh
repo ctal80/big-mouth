@@ -25,7 +25,7 @@ elif [ "$1" = "deploy" ] && [ $# -eq 2 ]; then
 	STAGE=$2
 
 	npm install
-        'node_modules/.bin/sls' deploy -s $STAGE
+        'node_modules/.bin/sls' deploy -s $STAGE --aws-profile demo --region eu-west-1
 else
   instruction
   exit 1
