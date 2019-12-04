@@ -66,7 +66,8 @@ function* getRestaurants() {
 
 module.exports.handler = co.wrap (function* (event, context, callback) {
   let template = yield loadHtml();
-  console.log(template);
+  console.log("template is ok !!!!!!!!!!!!!!");
+  console.log('restaurantsApiRoot:' + restaurantsApiRoot);
   let restaurants = yield  getRestaurants();
   let dayOfWeek = days[new Date().getDay()];
   

@@ -23,7 +23,7 @@ functions:
           path: /
           method: get
     environment:
-       restaurants_api: https://20xxvk5g09.execute-api.eu-west-1.amazonaws.com/dev/restaurants
+       restaurants_api:  https://odcddb6cs0.execute-api.eu-west-1.amazonaws.com/dev/restaurants
        cognito_user_pool_id:  eu-west-1_MucMlqr6n
        cognito_client_id: 61s5uk3gbe2gtu66d3sdlhkpvs
   
