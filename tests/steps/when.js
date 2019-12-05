@@ -123,7 +123,7 @@ let we_invoke_get_restaurants = co.wrap(function* () {
   let res =
     mode === 'handler' 
       ? yield viaHandler({}, 'get-restaurants')
-      : yield viaHttp('restaurants', 'GET', { iam_auth: true });
+      : yield viaHttp('restaurants', 'GET', { iam_auth: false });
 
   return res;
 });

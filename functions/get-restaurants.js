@@ -14,7 +14,7 @@ const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 const defaultResaults = process.env.defaultResaults || 8;
 const tableName = process.env.restaurants_table;
-
+console.log(tableName);
 
 
 function* getRestaurants(count){
@@ -29,6 +29,7 @@ function* getRestaurants(count){
 
 module.exports.handler = co.wrap (function* (event, context, cb) {
      let restaurants = yield getRestaurants(defaultResaults);
+     console.log(restaurants);
      let response = {
          statusCode: 200, 
          body: JSON.stringify(restaurants)
