@@ -2,7 +2,7 @@
 
 const co = require('co');
 const Promise = require('bluebird');
-
+const awscred = Promise.promisifyAll(require('awscred'));
 
 let initialized = false;
 
@@ -19,8 +19,18 @@ let init = co.wrap(function*(){
     process.env.cognito_user_pool_id=  "eu-west-1_MucMlqr6n";
     process.env.cognito_server_client_id=  "46bpvghchich5epea1ar319q0d";
     process.env.AWS_PROFILE = "demo";
-   
-    //let cred = (yield awscred.loadasync()).credentials;
+    
+    if(!process.env.AWS.ACCESS_KEY_ID) {
+        let cred = (yield awscred.loadAsync()).credentials;
+
+        process.env.AWS_ACCESS_KEY_ID = cred.accessKeyId;
+        process.env.AWS_SECRET_ACCESS_KEY = cred.secretAccessKey;
+        
+        if(cred.sessionToken) {
+            process.env.AWS_SESSION_TOKEN = cred.sessionToken;
+        }
+    }
+
         
     console.log("AWS credentials loaded");
     initialized = true; 
