@@ -10,7 +10,7 @@ const req = require('superagent');
 const http = require('superagent-promise')(req, Promise);
 const aws4 = require('aws4');
 const URL = require('url');
-const awscred = Promise.promisifyAll(require('awscred'));
+const awscred = Promise.promisifyAll(require('../lib/awscred'));
 
 //const awsRegion = process.env.AWS_REGION;
 const awsRegion = 'eu-west-1';
