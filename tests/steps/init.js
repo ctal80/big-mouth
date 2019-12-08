@@ -20,7 +20,7 @@ let init = co.wrap(function*(){
     process.env.cognito_server_client_id=  "46bpvghchich5epea1ar319q0d";
     process.env.AWS_PROFILE = "demo";
     
-    if(!process.env.AWS.ACCESS_KEY_ID) {
+    if(!process.env.AWS_ACCESS_KEY_ID) {
         let cred = (yield awscred.loadAsync()).credentials;
         //console.log("!!!!!!!!!Creds: " + cred.ACCESS_KEY_ID + " " + cred.AWS_SECRET_ACCESS_KEY);
         process.env.AWS_ACCESS_KEY_ID = cred.accessKeyId;
