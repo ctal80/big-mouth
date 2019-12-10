@@ -31,6 +31,7 @@ let an_authenticated_user = function* () {
       { Name: "email",       Value: email }
     ]
   };
+  console.log(`Going to create: [${username}]`);
   yield cognito.adminCreateUser(createReq).promise();
 
   console.log(`[${username}] - user is created`);
