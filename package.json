@@ -22,13 +22,13 @@
     "moch": "0.0.1",
     "mocha": "^6.2.2",
     "mustache": "^3.1.0",
-    "proxy-agent": "^3.1.1",
+    "proxy-agent": "^5.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
     "serverless-pseudo-parameters": "^2.5.0",
     "superagent": "^5.1.0",
     "superagent-promise": "^1.1.0",
-    "superagent-proxy": "^2.0.0"
+    "superagent-proxy": "^3.0.0"
   },
   "devDependencies": {
     "serverless": "^1.57.0"
